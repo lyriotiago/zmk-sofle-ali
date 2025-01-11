@@ -76,11 +76,11 @@
 
         layer_2 {
             bindings = <
-&kp TILDE        &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4     &rgb_ug RGB_BRI  &kp F6  &kp F7  &kp F8           &kp F9             &trans           &trans
-&trans           &bt BT_CLR       &bt BT_CLR_ALL   &trans           &trans           &trans           &gb_ug RGB_BRD   &trans  &trans  &kp F11          &kp F12            &trans           &trans
-&trans           &out OUT_USB     &out OUT_BLE     &trans           &trans           &trans           &rgb_ug RGB_HUI  &trans  &trans  &trans           &trans             &trans           &trans
-&trans           &sys_reset       &trans           &bootloader      &trans           &trans           &rgb_ug RGB_HUD  &trans  &trans  &sys_reset       &soft_off          &bootloader      &trans
-&kp C_MUTE       &rgb_ug RGB_OFF  &rgb_ug RGB_ON   &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_TOG  &mkp LCLK        &rgb_ug RGB_SPI &rgb_ug RGB_SPD  &rgb_ug RGB_SAI    &rgb_ug RGB_SAD  &trans
+&kp TILDE        &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4     &rgb_ug RGB_BRI  &kp F6          &kp F7           &kp F8           &kp F9             &trans           &trans
+&trans           &bt BT_CLR       &bt BT_CLR_ALL   &trans           &trans           &trans           &rgb_ug RGB_BRD  &trans          &trans           &kp F11          &kp F12            &trans           &trans
+&trans           &out OUT_USB     &out OUT_BLE     &trans           &trans           &trans           &rgb_ug RGB_HUI  &trans          &trans           &trans           &trans             &trans           &trans
+&trans           &sys_reset       &trans           &bootloader      &trans           &trans           &rgb_ug RGB_HUD  &trans          &trans           &sys_reset       &soft_off          &bootloader      &trans
+&kp C_MUTE       &rgb_ug RGB_OFF  &rgb_ug RGB_ON   &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_TOG  &mkp LCLK        &rgb_ug RGB_SPI &rgb_ug RGB_SPD  &rgb_ug RGB_SAI  &rgb_ug RGB_SAD    &trans
             >;
 
             sensor-bindings = <&scroll_encoder>;
