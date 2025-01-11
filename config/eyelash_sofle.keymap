@@ -26,23 +26,22 @@
 / {
     behaviors {
         mmv {
-            acceleration-exponent = <1>;      // 1
+            acceleration-exponent = <1>;     // 1
             time-to-max-speed-ms = <900>;    // 40
-            delay-ms = <0>;                   // 0
+            delay-ms = <0>;                  // 0
         };
 
         msc {
-            acceleration-exponent = <1>;      // 0
-            time-to-max-speed-ms = <400>;      // 500
-            delay-ms = <0>;                   //   10
+            delay-ms = <0>;                  // 0
+            acceleration-exponent = <0>;     // 0
+            time-to-max-speed-ms = <0>;      // 300
         };
     };
 
     scroll_encoder: scroll_encoder {
         compatible = "zmk,behavior-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-
+        sensor-binding-cells = <0>;
+        bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
         tap-ms = <30>;
     };
 
@@ -51,11 +50,11 @@
 
         layer0 {
             bindings = <
-&kp ESC     &kp N1     &kp N2        &kp N3        &kp N4  &kp N5       &kp UP_ARROW     &kp N6     &kp N7     &kp N8     &kp N9           &kp N0      &kp BACKSPACE
-&kp TAB     &kp Q      &kp W         &kp E         &kp R   &kp T        &kp DOWN_ARROW   &kp Y      &kp U      &kp I      &kp O            &kp P       &kp BSLH
-&mo 1       &kp A      &kp S         &kp D         &kp F   &kp G        &kp LEFT_ARROW   &kp H      &kp J      &kp K      &kp L            &kp SEMI    &kp APOS
-&kp LSHFT   &kp Z      &kp X         &kp C         &kp V   &kp B        &kp RIGHT_ARROW  &kp N      &kp M      &kp COMMA  &kp DOT          &kp FSLH    &kp ENTER
-&kp C_MUTE  &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &mo 1   &kp SPACE    &kp ENTER        &kp SPACE  &kp ENTER  &mo 2      &kp RIGHT_SHIFT  &kp DELETE
+&kp ESC          &kp N1     &kp N2        &kp N3        &kp N4  &kp N5       &kp UP_ARROW     &kp N6     &kp N7     &kp N8     &kp N9           &kp N0      &kp BACKSPACE
+&kp TAB          &kp Q      &kp W         &kp E         &kp R   &kp T        &kp DOWN_ARROW   &kp Y      &kp U      &kp I      &kp O            &kp P       &kp BSLH
+&mo 1            &kp A      &kp S         &kp D         &kp F   &kp G        &kp LEFT_ARROW   &kp H      &kp J      &kp K      &kp L            &kp SEMI    &kp APOS
+&kp LSHFT        &kp Z      &kp X         &kp C         &kp V   &kp B        &kp RIGHT_ARROW  &kp N      &kp M      &kp COMMA  &kp DOT          &kp FSLH    &kp ENTER
+&kp PRINTSCREEN  &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &mo 1   &kp SPACE    &kp ENTER        &kp SPACE  &kp ENTER  &mo 2      &kp RIGHT_SHIFT  &kp DELETE
             >;
 
             sensor-bindings = <&scroll_encoder>;
@@ -77,11 +76,11 @@
 
         layer_2 {
             bindings = <
-&kp TILDE        &bt BT_SEL 0    &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4     &mmv MOVE_UP     &kp F6  &kp F7  &kp F8      &kp F9     &trans       &trans
-&trans           &bt BT_CLR      &bt BT_CLR_ALL   &trans           &trans           &trans           &mmv MOVE_DOWN   &trans  &trans  &kp F11     &kp F12    &trans       &trans
-&trans           &out OUT_USB    &out OUT_BLE     &trans           &trans           &trans           &mmv MOVE_LEFT   &trans  &trans  &trans      &trans     &trans       &trans
-&trans           &sys_reset      &trans           &bootloader      &trans           &rgb_ug RGB_BRI  &mmv MOVE_RIGHT  &trans  &trans  &sys_reset  &soft_off  &bootloader  &trans
-&rgb_ug RGB_OFF  &rgb_ug RGB_ON  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRD  &mkp LCLK        &trans  &trans  &trans      &trans     &trans
+&kp TILDE        &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4     &rgb_ug RGB_BRI  &kp F6  &kp F7  &kp F8           &kp F9             &trans           &trans
+&trans           &bt BT_CLR       &bt BT_CLR_ALL   &trans           &trans           &trans           &gb_ug RGB_BRD   &trans  &trans  &kp F11          &kp F12            &trans           &trans
+&trans           &out OUT_USB     &out OUT_BLE     &trans           &trans           &trans           &rgb_ug RGB_HUI  &trans  &trans  &trans           &trans             &trans           &trans
+&trans           &sys_reset       &trans           &bootloader      &trans           &trans           &rgb_ug RGB_HUD  &trans  &trans  &sys_reset       &soft_off          &bootloader      &trans
+&kp C_MUTE       &rgb_ug RGB_OFF  &rgb_ug RGB_ON   &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_TOG  &mkp LCLK        &rgb_ug RGB_SPI &rgb_ug RGB_SPD  &rgb_ug RGB_SAI    &rgb_ug RGB_SAD  &trans
             >;
 
             sensor-bindings = <&scroll_encoder>;
