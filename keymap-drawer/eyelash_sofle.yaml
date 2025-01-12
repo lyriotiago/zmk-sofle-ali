@@ -52,7 +52,7 @@ layers:
   - {t: ., s: '>'}
   - {t: /, s: '?'}
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - PRINTSCREEN
+  - '&mute_unmute'
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-command$$
   - $$mdi:apple-keyboard-option$$
@@ -126,9 +126,9 @@ layers:
   - Ins
   - {t: '=', s: +}
   - {t: '=', s: +}
-  - {t: '-', s: _}
-  - +
-  - _
+  - '*'
+  - {t: /, s: '?'}
+  - {t: '=', s: +}
   config:
   - {t: default, h: toggle}
   - {h: '1', s: '$$mdi:bluetooth-connect$$'}
@@ -194,3 +194,8 @@ layers:
   - {t: default, h: toggle}
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '=', s: +}
+combos:
+- p: [12, 13]
+  k: $$mdi:backspace-reverse-outline$$
+- p: [49, 50]
+  k: '&draw_arrow'
