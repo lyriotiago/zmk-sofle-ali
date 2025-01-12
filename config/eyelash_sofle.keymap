@@ -1,9 +1,14 @@
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 20 // 10
+
+#include <behaviors/mouse_keys.dtsi>
 #include <behaviors.dtsi>
+
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
-#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/ext_power.h>
 
 #include <input/processors.dtsi>
 
@@ -17,7 +22,8 @@
 };
 */
 
-/*        mmv {
+/*
+        mmv {
             acceleration-exponent = <1>;     // 1
             time-to-max-speed-ms = <900>;    // 40
             delay-ms = <0>;                  // 0
@@ -93,6 +99,15 @@
                 , <&macro_release &kp LCTRL>
                 ;
         };
+        code_comment: code_comment {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp FSLH>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
         run_cell: run_cell {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -100,6 +115,20 @@
                 = <&macro_press &kp LSHFT>
                 , <&macro_tap &kp ENTER>
                 , <&macro_release &kp LSHFT>
+                ;
+        };
+        scroll_up: scroll_up {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &msc SCRL_UP>
+                ;
+        };
+        scroll_down: scroll_down {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &msc SCRL_DOWN>
                 ;
         };
     };
@@ -121,9 +150,26 @@
             key-positions = <50 51>;
             bindings = <&run_cell>;
         };
+        combo_code_comment {
+            timeout-ms = <50>;
+            key-positions = <3 4>;
+            bindings = <&code_comment>;
+        };
+        combo_code_console {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&code_console>;
+        };
     };
 
     behaviors {
+
+        rgb_encoder: rgb_encoder {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "RGB_ENCODER";
+            #sensor-binding-cells = <0>;
+            bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
+        };
 
         scroll_encoder: scroll_encoder {
             compatible = "zmk,behavior-sensor-rotate";
@@ -152,7 +198,7 @@
         layer_1 {
             bindings = <
 &code_console  &kp F1           &kp F2           &kp F3           &kp F4           &kp F5                        &kp PG_UP                 &kp F6       &kp F7         &kp F8      &kp F9      &kp LPAR          &kp RPAR
-&trans         &kp GRAVE        &kp F11          &kp F11          &kp F11          &trans                        &kp PG_DN                 &kp PG_UP    &kp UP         &kp HOME    &kp PLUS    &kp LEFT_BRACKET  &kp RIGHT_BRACKET 
+&trans         &kp GRAVE        &kp F10          &kp F11          &kp F12          &trans                        &kp PG_DN                 &kp PG_UP    &kp UP         &kp HOME    &kp PLUS    &kp LEFT_BRACKET  &kp RIGHT_BRACKET 
 &trans         &kp TILDE        &trans           &trans           &trans           &trans                        &kp HOME                  &kp LEFT     &kp DOWN       &kp RIGHT   &kp UNDER   &kp LBRC          &kp RBRC
 &kp K_SLEEP    &rgb_ug RGB_OFF  &rgb_ug RGB_ON   &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI               &kp END                   &kp PG_DN    &kp INSERT     &kp END     &kp MINUS   &kp LESS_THAN     &kp GREATER_THAN
                &kp C_MUTE       &kp PRINTSCREEN  &kp CAPSLOCK     &trans           &trans             &trans     &kp INSERT   &kp EQUAL    &kp EQUAL    &kp ASTERISK   &kp FSLH    &draw_arrow
@@ -165,13 +211,13 @@
         layer_2 {
             bindings = <
 &to 0       &bt BT_SEL 0   &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                      &rgb_ug RGB_BRI              &kp F6     &kp N7     &kp N8     &kp N9    &kp PLUS      &to 0
-&trans      &bt BT_CLR     &bt BT_CLR_ALL   &mkp MB4         &mkp MB5           &trans                            &rgb_ug RGB_BRD              &trans     &kp N4     &kp N5     &kp N6    &kp MINUS     &sys_reset
+&trans      &bt BT_CLR     &bt BT_CLR_ALL   &mkp MB4         &mkp MB5         &trans                            &rgb_ug RGB_BRD              &trans     &kp N4     &kp N5     &kp N6    &kp MINUS     &sys_reset
 &trans      &out OUT_USB   &out OUT_BLE     &trans           &rgb_ug RGB_SPI  &rgb_ug RGB_SPD                   &rgb_ug RGB_HUI              &trans     &kp N1     &kp N2     &kp N3    &kp ASTERISK  &soft_off
 &trans      &sys_reset     &trans           &bootloader      &rgb_ug RGB_SAI  &rgb_ug RGB_SAD                   &rgb_ug RGB_HUD              &trans     &kp COMMA  &kp N0     &kp DOT   &kp FSLH      &bootloader
             &kp C_MUTE     &rgb_ug RGB_OFF  &rgb_ug RGB_ON   &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_TOG  &mkp LCLK        &kp SPACE   &kp ENTER  &to 0      &kp ENTER  &kp EQUAL
             >;
  
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&inc_dec_kp scroll_up scroll_down>;
             display-name = "Config";
         };
     };
