@@ -97,7 +97,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - prev word
+  - '&prev_word'
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-right-bold$$
@@ -110,7 +110,7 @@ layers:
   - RGB EFF
   - RGB EFR
   - RGB SPI
-  - next word
+  - '&next_word'
   - PG DN
   - Ins
   - END
