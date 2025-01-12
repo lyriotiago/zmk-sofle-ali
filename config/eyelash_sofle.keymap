@@ -7,7 +7,7 @@
 
 #include <input/processors.dtsi>
 
-
+/*
 &mmv_input_listener {
     input-processors = <&zip_xy_scaler 2 1>;
 };
@@ -15,7 +15,31 @@
 &msc_input_listener {
     input-processors = <&zip_xy_scaler 2 1>;
 };
+*/
 
+/*        mmv {
+            acceleration-exponent = <1>;     // 1
+            time-to-max-speed-ms = <900>;    // 40
+            delay-ms = <0>;                  // 0
+        };
+
+        msc {
+            delay-ms = <0>;                  // 0
+            acceleration-exponent = <1>;     // 0
+            time-to-max-speed-ms = <1>;      // 300
+        };
+*/
+
+&msc {
+    acceleration-exponent = <0>;      // 0
+    time-to-max-speed-ms = <0>;       // 300
+    delay-ms = <0>;                   // 0
+};
+
+&mmv {
+    time-to-max-speed-ms = <400>;
+    acceleration-exponent = <1>;
+};
 
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200  // 60
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
@@ -56,8 +80,8 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &kp MINUS>
-                , <&macro_press &kp GREATER_THAN>
+                = <&macro_tap &kp MINUS>
+                , <&macro_tap &kp GREATER_THAN>
                 ;
         };
     };
@@ -66,37 +90,26 @@
         compatible = "zmk,combos";
         combo_del {
             timeout-ms = <50>;
-            key-positions = <12 13>;
+            key-positions = <11 12>;
             bindings = <&kp DELETE>;
         };
         combo_arrow {
             timeout-ms = <50>;
-            key-positions = <49 50>;
+            key-positions = <48 49>;
             bindings = <&draw_arrow>;
         };
     };
 
     behaviors {
-        mmv {
-            acceleration-exponent = <1>;     // 1
-            time-to-max-speed-ms = <900>;    // 40
-            delay-ms = <0>;                  // 0
-        };
 
-        msc {
-            delay-ms = <0>;                  // 0
-            acceleration-exponent = <1>;     // 0
-            time-to-max-speed-ms = <1>;      // 300
+        scroll_encoder: scroll_encoder {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+
+            tap-ms = <30>;
         };
     };
-
-    scroll_encoder: scroll_encoder {
-        compatible = "zmk,behavior-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-        tap-ms = <30>;
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -109,21 +122,21 @@
             &mute_unmute     &kp LCTRL     &kp LEFT_GUI  &kp LEFT_ALT  &mo 1        &kp SPACE         &kp ENTER          &kp SPACE   &kp ENTER   &to 2      &prev_word       &next_word
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
-            display-name = "default";
+            sensor-bindings = <&scroll_encoder>;
+            display-name = "QWERY";
         };
 
         layer_1 {
             bindings = <
-&kp F10     &kp F1           &kp F2           &kp F3           &kp F4           &kp F5                        &kp PG_UP                 &kp F6       &kp F7         &kp F8      &kp F9     &kp LPAR          &kp RPAR
-&kp F11     &kp GRAVE        &mkp LCLK        &mkp MCLK        &mkp RCLK        &mkp MB4                      &kp PG_DN                 &kp PG_UP    &kp UP         &kp HOME    &kp PLUS   &kp LEFT_BRACKET  &kp RIGHT_BRACKET 
-&kp F12     &kp TILDE        &trans           &trans           &trans           &mkp MB5                      &kp HOME                  &kp LEFT     &kp DOWN       &kp RIGHT   &kp UNDER  &kp LBRC          &kp RBRC
-&kp K_SLEEP &rgb_ug RGB_OFF  &rgb_ug RGB_ON   &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI               &kp END                   &kp PG_DN    &kp INSERT     &kp END     &kp MINUS  &kp LESS_THAN     &kp GREATER_THAN
-            &kp C_MUTE       &kp PRINTSCREEN  &kp CAPSLOCK     &trans           &trans             &trans     &kp INSERT   &kp EQUAL    &kp EQUAL    &kp ASTERISK   &kp FSLH    &kp EQUAL
+&kp F10     &kp F1           &kp F2           &kp F3           &kp F4           &kp F5                        &kp PG_UP                 &kp F6       &kp F7         &kp F8      &kp F9      &kp LPAR          &kp RPAR
+&kp F11     &kp GRAVE        &mkp LCLK        &mkp MCLK        &mkp RCLK        &mkp MB4                      &kp PG_DN                 &kp PG_UP    &kp UP         &kp HOME    &kp PLUS    &kp LEFT_BRACKET  &kp RIGHT_BRACKET 
+&kp F12     &kp TILDE        &trans           &trans           &trans           &mkp MB5                      &kp HOME                  &kp LEFT     &kp DOWN       &kp RIGHT   &kp UNDER   &kp LBRC          &kp RBRC
+&kp K_SLEEP &rgb_ug RGB_OFF  &rgb_ug RGB_ON   &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI               &kp END                   &kp PG_DN    &kp INSERT     &kp END     &kp MINUS   &kp LESS_THAN     &kp GREATER_THAN
+            &kp C_MUTE       &kp PRINTSCREEN  &kp CAPSLOCK     &trans           &trans             &trans     &kp INSERT   &kp EQUAL    &kp EQUAL    &kp ASTERISK   &kp FSLH    &draw_arrow
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
-            display-name = "symbol";
+            display-name = "Symbol";
         };
 
         layer_2 {
@@ -136,7 +149,7 @@
             >;
  
             sensor-bindings = <&scroll_encoder>;
-            display-name = "config";
+            display-name = "Config";
         };
     };
 };
