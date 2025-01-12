@@ -197,8 +197,8 @@
 
         layer_1 {
             bindings = <
-&code_console  &kp F1           &kp F2           &kp F3           &kp F4           &kp F5                        &kp scroll_up                  &kp F6       &kp F7         &kp F8      &kp F9      &kp LPAR          &kp RPAR
-&trans         &kp GRAVE        &kp F10          &kp F11          &kp F12          &trans                        &kp scroll_down                &kp PG_UP    &kp UP         &kp HOME    &kp PLUS    &kp LEFT_BRACKET  &kp RIGHT_BRACKET 
+&code_console  &kp F1           &kp F2           &kp F3           &kp F4           &kp F5                        &scroll_up                  &kp F6       &kp F7         &kp F8      &kp F9      &kp LPAR          &kp RPAR
+&trans         &kp GRAVE        &kp F10          &kp F11          &kp F12          &trans                        &scroll_down                &kp PG_UP    &kp UP         &kp HOME    &kp PLUS    &kp LEFT_BRACKET  &kp RIGHT_BRACKET 
 &trans         &kp TILDE        &trans           &trans           &trans           &trans                        &kp prev_word                  &kp LEFT     &kp DOWN       &kp RIGHT   &kp UNDER   &kp LBRC          &kp RBRC
 &kp K_SLEEP    &rgb_ug RGB_OFF  &rgb_ug RGB_ON   &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI               &kp next_word                  &kp PG_DN    &kp INSERT     &kp END     &kp MINUS   &kp LESS_THAN     &kp GREATER_THAN
                &kp C_MUTE       &kp PRINTSCREEN  &kp CAPSLOCK     &trans           &trans             &trans     &kp INSERT        &kp EQUAL    &kp EQUAL    &kp ASTERISK   &kp FSLH    &draw_arrow
