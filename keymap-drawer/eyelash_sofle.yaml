@@ -71,7 +71,7 @@ layers:
   - F3
   - F4
   - F5
-  - PG UP
+  - scroll up
   - F6
   - F7
   - F8
@@ -84,7 +84,7 @@ layers:
   - F11
   - F12
   - {t: '$$mdi:transfer$$', type: trans}
-  - PG DN
+  - scroll down
   - PG UP
   - $$mdi:arrow-up-bold$$
   - HOME
@@ -97,7 +97,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - HOME
+  - prev word
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-right-bold$$
@@ -110,7 +110,7 @@ layers:
   - RGB EFF
   - RGB EFR
   - RGB SPI
-  - END
+  - next word
   - PG DN
   - Ins
   - END
