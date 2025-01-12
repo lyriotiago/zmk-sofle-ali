@@ -78,7 +78,7 @@ layers:
   - F9
   - (
   - )
-  - {t: '$$mdi:transfer$$', type: trans}
+  - SLEEP
   - {t: '`', s: '~'}
   - F10
   - F11
@@ -104,12 +104,12 @@ layers:
   - _
   - '{'
   - '}'
-  - SLEEP
-  - RGB OFF
-  - RGB ON
-  - RGB EFF
-  - RGB EFR
-  - RGB SPI
+  - {t: '$$mdi:transfer$$', type: trans}
+  - '&undo'
+  - '&cut'
+  - '&copy'
+  - '&paste'
+  - '&redo'
   - '&next_word'
   - PG DN
   - Ins
