@@ -191,6 +191,6 @@ layers:
   - $$mdi:mouse-left-click-outline$$
   - RGB SPI
   - RGB SPD
-  - {t: RGB SAI, type: held}
+  - {type: held}
+  - RGB SAI
   - RGB SAD
-  - {t: '$$mdi:transfer$$', type: trans}
