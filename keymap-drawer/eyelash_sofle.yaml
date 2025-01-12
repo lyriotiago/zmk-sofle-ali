@@ -80,9 +80,9 @@ layers:
   - )
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '`', s: '~'}
+  - F10
   - F11
-  - F11
-  - F11
+  - F12
   - {t: '$$mdi:transfer$$', type: trans}
   - PG DN
   - PG UP
@@ -201,3 +201,7 @@ combos:
   k: '&draw_arrow'
 - p: [50, 51]
   k: '&run_cell'
+- p: [3, 4]
+  k: '&code_comment'
+- p: [0, 1]
+  k: '&code_console'
