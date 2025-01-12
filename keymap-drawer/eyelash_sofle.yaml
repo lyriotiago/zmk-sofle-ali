@@ -160,8 +160,8 @@ layers:
   - OUT USB
   - OUT BLE
   - {t: '$$mdi:transfer$$', type: trans}
-  - '&RGB_SPI'
-  - '&RGB_SPD'
+  - RGB SPI
+  - RGB SPD
   - RGB HUI
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '1', s: '!'}
@@ -173,8 +173,8 @@ layers:
   - {t: '$$mdi:backup-restore$$', type: bootloader}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:progress-download$$
-  - '&RGB_SAI'
-  - '&RGB_SAD'
+  - RGB SAI
+  - RGB SAD
   - RGB HUD
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: ',', s: <}
