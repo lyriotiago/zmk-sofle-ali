@@ -1,5 +1,5 @@
 layers:
-  default:
+  QWERY:
   - $$mdi:keyboard-esc$$
   - {t: '1', s: '!'}
   - {t: '2', s: '@'}
@@ -26,7 +26,7 @@ layers:
   - O
   - P
   - {t: \, s: '|'}
-  - symbol
+  - Symbol
   - A
   - S
   - D
@@ -56,16 +56,16 @@ layers:
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-command$$
   - $$mdi:apple-keyboard-option$$
-  - symbol
+  - Symbol
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {t: config, h: toggle}
+  - {t: Config, h: toggle}
   - '&prev_word'
   - '&next_word'
-  symbol:
-  - F10
+  Symbol:
+  - '&code_console'
   - F1
   - F2
   - F3
@@ -78,12 +78,12 @@ layers:
   - F9
   - (
   - )
-  - F11
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '`', s: '~'}
-  - $$mdi:mouse-left-click-outline$$
-  - $$mdi:mouse-scroll-wheel$$
-  - $$mdi:mouse-right-click-outline$$
-  - '&mkp MB4'
+  - F11
+  - F11
+  - F11
+  - {t: '$$mdi:transfer$$', type: trans}
   - PG DN
   - PG UP
   - $$mdi:arrow-up-bold$$
@@ -91,12 +91,12 @@ layers:
   - +
   - {t: '[', s: '{'}
   - {t: ']', s: '}'}
-  - {t: F12, type: held}
+  - {type: held}
   - '~'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - '&mkp MB5'
+  - {t: '$$mdi:transfer$$', type: trans}
   - HOME
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-down-bold$$
@@ -128,9 +128,9 @@ layers:
   - {t: '=', s: +}
   - '*'
   - {t: /, s: '?'}
-  - {t: '=', s: +}
-  config:
-  - {t: default, h: toggle}
+  - '&draw_arrow'
+  Config:
+  - {t: QWERY, h: toggle}
   - {h: '1', s: '$$mdi:bluetooth-connect$$'}
   - {h: '2', s: '$$mdi:bluetooth-connect$$'}
   - {h: '3', s: '$$mdi:bluetooth-connect$$'}
@@ -142,12 +142,12 @@ layers:
   - {t: '8', s: '*'}
   - {t: '9', s: (}
   - +
-  - {t: default, h: toggle}
+  - {t: QWERY, h: toggle}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:bluetooth-off$$
   - BT CLR ALL
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '&mkp MB4'
+  - '&mkp MB5'
   - {t: '$$mdi:transfer$$', type: trans}
   - RGB BRD
   - {t: '$$mdi:transfer$$', type: trans}
@@ -191,11 +191,13 @@ layers:
   - $$mdi:mouse-left-click-outline$$
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {t: default, h: toggle}
+  - {t: QWERY, h: toggle}
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '=', s: +}
 combos:
-- p: [12, 13]
+- p: [11, 12]
   k: $$mdi:backspace-reverse-outline$$
-- p: [49, 50]
+- p: [48, 49]
   k: '&draw_arrow'
+- p: [50, 51]
+  k: '&run_cell'
