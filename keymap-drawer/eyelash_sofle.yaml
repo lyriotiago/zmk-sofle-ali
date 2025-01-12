@@ -104,12 +104,12 @@ layers:
   - _
   - '{'
   - '}'
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '&redo'
   - '&undo'
   - '&cut'
   - '&copy'
   - '&paste'
-  - '&redo'
+  - {t: '$$mdi:transfer$$', type: trans}
   - '&next_word'
   - PG DN
   - Ins
