@@ -197,11 +197,16 @@ layers:
 combos:
 - p: [11, 12]
   k: $$mdi:backspace-reverse-outline$$
+  l: [QWERY]
 - p: [48, 49]
   k: '&draw_arrow'
+  l: [QWERY]
 - p: [50, 51]
   k: '&run_cell'
+  l: [QWERY]
 - p: [3, 4]
   k: '&code_comment'
+  l: [QWERY]
 - p: [0, 1]
   k: '&code_console'
+  l: [QWERY]
