@@ -21,8 +21,18 @@
 &msc_input_listener {
     input-processors = <&zip_xy_scaler 2 1>;
 };
-*/
 
+mmv {
+    acceleration-exponent = <1>;     // 1
+    time-to-max-speed-ms = <900>;    // 40
+    delay-ms = <0>;                  // 0
+};
+
+msc {
+    delay-ms = <0>;                  // 0
+    acceleration-exponent = <1>;     // 0
+    time-to-max-speed-ms = <1>;      // 300
+};
 
 &msc {
     acceleration-exponent = <0>;      // 0
@@ -38,6 +48,7 @@
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200  // 60
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 300    // 10
 
+*/
 
 / {
     macros {
@@ -172,42 +183,35 @@
             timeout-ms = <50>;
             key-positions = <11 12>;
             bindings = <&kp DELETE>;
+            layers = <0>;
         };
         combo_arrow {
             timeout-ms = <50>;
             key-positions = <48 49>;
             bindings = <&draw_arrow>;
+            layers = <0>;
         };
         combo_run_cell {
             timeout-ms = <50>;
             key-positions = <50 51>;
             bindings = <&run_cell>;
+            layers = <0>;
         };
         combo_code_comment {
             timeout-ms = <50>;
             key-positions = <3 4>;
             bindings = <&code_comment>;
+            layers = <0>;
         };
         combo_code_console {
             timeout-ms = <50>;
             key-positions = <0 1>;
             bindings = <&code_console>;
+            layers = <0>;
         };
     };
 
     behaviors {
-
-        mmv {
-            acceleration-exponent = <1>;     // 1
-            time-to-max-speed-ms = <900>;    // 40
-            delay-ms = <0>;                  // 0
-        };
-
-        msc {
-            delay-ms = <0>;                  // 0
-            acceleration-exponent = <1>;     // 0
-            time-to-max-speed-ms = <1>;      // 300
-        };
 
         rgb_encoder: rgb_encoder {
             compatible = "zmk,behavior-sensor-rotate";
@@ -220,7 +224,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-            tap-ms = <50>;
+            tap-ms = <100>;
         };
     };
     keymap {
