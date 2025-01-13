@@ -258,9 +258,9 @@ msc {
         scroll_encoder: scroll_encoder {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&msc MOVE_Y(-30)>, <&msc MOVE_Y(30)>;
+            bindings = <&msc MOVE_Y(-40)>, <&msc MOVE_Y(40)>;
 
-            tap-ms = <30>;
+            tap-ms = <50>;
         };
 
         rgb_encoder: rgb_encoder {
