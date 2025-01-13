@@ -1,6 +1,6 @@
 #define CONFIG_ZMK_POINTING y
-#define ZMK_MOUSE_DEFAULT_MOVE_VAL 1500  // 60
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 50  // 10
+#define ZMK_MOUSE_DEFAULT_MOVE_VAL 1500 // 60
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 30   // 10
 
 
 #include <behaviors.dtsi>
@@ -245,22 +245,22 @@ msc {
     behaviors {
         mmv {
             acceleration-exponent = <1>;      // 1
-            time-to-max-speed-ms = <900>;    // 40
+            time-to-max-speed-ms = <900>;     // 40
             delay-ms = <0>;                   // 0
         };
 
         msc {
             acceleration-exponent = <1>;     // 0
             time-to-max-speed-ms = <1>;      // 500
-            delay-ms = <0>;                  //   10
+            delay-ms = <0>;                  // 10
         };
 
         scroll_encoder: scroll_encoder {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&msc MOVE_Y(-50)>, <&msc MOVE_Y(50)>;
+            bindings = <&msc MOVE_Y(-30)>, <&msc MOVE_Y(30)>;
 
-            tap-ms = <100>;
+            tap-ms = <30>;
         };
 
         rgb_encoder: rgb_encoder {
@@ -283,7 +283,7 @@ msc {
             &mute_unmute     &kp LCTRL     &kp LEFT_GUI  &kp LEFT_ALT  &mo 1        &kp SPACE         &kp ENTER          &kp SPACE   &kp ENTER   &to 2      &prev_word       &next_word
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
+            sensor-bindings = <&scroll_encoder>;
             display-name = "QWERTY";
         };
 
@@ -309,7 +309,7 @@ msc {
             &kp C_MUTE     &rgb_ug RGB_OFF  &rgb_ug RGB_ON   &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_TOG  &mkp LCLK        &kp SPACE   &kp ENTER        &to 0      &kp ENTER  &kp EQUAL
             >;
  
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&rgb_encoder>;
             display-name = "Config";
         };
     };
