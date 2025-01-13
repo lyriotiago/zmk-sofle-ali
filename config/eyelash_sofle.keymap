@@ -3,6 +3,9 @@
 #define CONFIG_ZMK_POINTING=y    // 10
 #define CONFIG_ZMK_POINTING_SMOOTH_SCROLLING=y
 
+#define SCRL_UP MOVE_Y(4200)
+#define SCRL_DOWN MOVE_Y(-4200)
+
 #include <behaviors/mouse_keys.dtsi>
 #include <behaviors.dtsi>
 
@@ -17,13 +20,15 @@
 
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200  // 60
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 4200  // 10
-#define CONFIG_ZMK_POINTING y    // 10
-#define CONFIG_ZMK_POINTING_SMOOTH_SCROLLING y
+#define CONFIG_ZMK_POINTING n    // 10
+#define CONFIG_ZMK_POINTING_SMOOTH_SCROLLING n
+#define SCRL_UP MOVE_Y(4200)
+#define SCRL_DOWN MOVE_Y(-4200)
 
 &msc {
     x-input-code = <INPUT_REL_HWHEEL>;
     y-input-code = <INPUT_REL_WHEEL>;
-    time-to-max-speed-ms = <100>;
+    time-to-max-speed-ms = <0>;
     acceleration-exponent = <0>;
 };
 
@@ -235,7 +240,7 @@ msc {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-            tap-ms = <300>;
+            tap-ms = <600>;
         };
     };
     keymap {
@@ -256,8 +261,8 @@ msc {
 
         layer_1 {
             bindings = <
-&code_console  &kp F1       &kp F2           &kp F3        &kp F4    &kp F5              &scroll_up                     &kp F6       &kp F7         &kp F8      &kp F9        &kp LPAR           &kp RPAR
-&kp K_SLEEP    &kp GRAVE    &kp F10          &kp F11       &kp F12   &trans              &scroll_down                   &kp PG_UP    &kp UP         &kp HOME    &kp PLUS      &kp LEFT_BRACKET   &kp RIGHT_BRACKET 
+&code_console  &kp F1       &kp F2           &kp F3        &kp F4    &kp F5              &msc SCRL_UPttttttttttttttttttttt                 &kp F6       &kp F7         &kp F8      &kp F9        &kp LPAR           &kp RPAR
+&kp K_SLEEP    &kp GRAVE    &kp F10          &kp F11       &kp F12   &trans              &msc SCRL_DOWN                 &kp PG_UP    &kp UP         &kp HOME    &kp PLUS      &kp LEFT_BRACKET   &kp RIGHT_BRACKET 
 &trans         &kp TILDE    &trans           &trans        &trans    &trans              &prev_word                     &kp LEFT     &kp DOWN       &kp RIGHT   &kp UNDER     &kp LBRC           &kp RBRC
 &redo          &undo        &cut             &copy         &paste    &trans              &next_word                     &kp PG_DN    &kp INSERT     &kp END     &kp MINUS     &kp LESS_THAN      &kp GREATER_THAN
                &kp C_MUTE   &kp PRINTSCREEN  &kp CAPSLOCK  &trans    &trans   &trans     &kp INSERT        &kp EQUAL    &kp EQUAL    &kp ASTERISK   &kp FSLH    &draw_arrow
