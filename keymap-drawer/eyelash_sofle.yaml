@@ -234,3 +234,6 @@ combos:
 - p: [60, 61]
   k: {t: Config, h: toggle}
   l: [QWERTY]
+- p: [62, 63]
+  k: {t: '=', s: +}
+  l: [QWERTY]
