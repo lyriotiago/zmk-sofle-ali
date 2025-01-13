@@ -18,7 +18,7 @@
 #define CONFIG_ZMK_POINTING=y
 #define CONFIG_ZMK_POINTING_SMOOTH_SCROLLING=n
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200  // 60
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 6200  // 10
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 4200  // 10
 
 &msc {
     x-input-code = <INPUT_REL_HWHEEL>;
@@ -250,7 +250,7 @@ msc {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-            tap-ms = <400>;
+            tap-ms = <200>;
         };
     };
     keymap {
