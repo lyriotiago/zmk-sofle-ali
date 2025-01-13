@@ -256,7 +256,7 @@ msc {
 
         layer_1 {
             bindings = <
-&code_console  &kp F1       &kp F2           &kp F3        &kp F4    &kp F5              &msc SCRL_UPttttttttttttttttttttt                 &kp F6       &kp F7         &kp F8      &kp F9        &kp LPAR           &kp RPAR
+&code_console  &kp F1       &kp F2           &kp F3        &kp F4    &kp F5              &msc SCRL_UP                   &kp F6       &kp F7         &kp F8      &kp F9        &kp LPAR           &kp RPAR
 &kp K_SLEEP    &kp GRAVE    &kp F10          &kp F11       &kp F12   &trans              &msc SCRL_DOWN                 &kp PG_UP    &kp UP         &kp HOME    &kp PLUS      &kp LEFT_BRACKET   &kp RIGHT_BRACKET 
 &trans         &kp TILDE    &trans           &trans        &trans    &trans              &prev_word                     &kp LEFT     &kp DOWN       &kp RIGHT   &kp UNDER     &kp LBRC           &kp RBRC
 &redo          &undo        &cut             &copy         &paste    &trans              &next_word                     &kp PG_DN    &kp INSERT     &kp END     &kp MINUS     &kp LESS_THAN      &kp GREATER_THAN
