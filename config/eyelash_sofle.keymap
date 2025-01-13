@@ -2,6 +2,7 @@
 #define CONFIG_ZMK_POINTING_SMOOTH_SCROLLING y
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 14200  // 60
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 14200  // 10
+#define ZMK_MOUSE_SCRL_VAL 140  // 10
 
 #include <behaviors/mouse_keys.dtsi>
 #include <behaviors.dtsi>
@@ -19,6 +20,7 @@
 #define CONFIG_ZMK_POINTING_SMOOTH_SCROLLING y
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 14200  // 60
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 14200  // 10
+#define ZMK_MOUSE_SCRL_VAL 140  // 10
 
 &msc {
     x-input-code = <INPUT_REL_HWHEEL>;
@@ -266,7 +268,7 @@ msc {
             &mute_unmute     &kp LCTRL     &kp LEFT_GUI  &kp LEFT_ALT  &mo 1        &kp SPACE         &kp ENTER          &kp SPACE   &kp ENTER   &to 2      &prev_word       &next_word
             >;
 
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
             display-name = "QWERTY";
         };
 
@@ -292,7 +294,7 @@ msc {
             &kp C_MUTE     &rgb_ug RGB_OFF  &rgb_ug RGB_ON   &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_TOG  &mkp LCLK        &kp SPACE   &kp ENTER        &to 0      &kp ENTER  &kp EQUAL
             >;
  
-            sensor-bindings = <&rgb_encoder>;
+            sensor-bindings = <&scroll_encoder>;
             display-name = "Config";
         };
     };
