@@ -250,6 +250,15 @@
             bindings = <&to 2>;
             layers = <0>;
         };
+
+
+        combo_EQUAL {
+            timeout-ms = <50>;
+            key-positions = <62 63>;
+            bindings = <&kp EQUAL>;
+            layers = <0>;
+        };
+
     };
 
     behaviors {
