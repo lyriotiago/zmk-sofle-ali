@@ -1,7 +1,7 @@
 #define CONFIG_ZMK_POINTING=y
 #define CONFIG_ZMK_POINTING_SMOOTH_SCROLLING=n
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200  // 60
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 4200  // 10
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 120  // 10
 
 #include <behaviors/mouse_keys.dtsi>
 #include <behaviors.dtsi>
@@ -18,7 +18,7 @@
 #define CONFIG_ZMK_POINTING=y
 #define CONFIG_ZMK_POINTING_SMOOTH_SCROLLING=n
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200  // 60
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 4200  // 10
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 120  // 10
 
 &msc {
     x-input-code = <INPUT_REL_HWHEEL>;
