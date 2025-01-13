@@ -250,7 +250,7 @@ msc {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-            tap-ms = <600>;
+            tap-ms = <400>;
         };
     };
     keymap {
