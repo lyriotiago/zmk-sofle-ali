@@ -1,5 +1,5 @@
 layers:
-  QWERY:
+  QWERTY:
   - $$mdi:keyboard-esc$$
   - {t: '1', s: '!'}
   - {t: '2', s: '@'}
@@ -130,7 +130,7 @@ layers:
   - {t: /, s: '?'}
   - '&draw_arrow'
   Config:
-  - {t: QWERY, h: toggle}
+  - {t: QWERTY, h: toggle}
   - {h: '1', s: '$$mdi:bluetooth-connect$$'}
   - {h: '2', s: '$$mdi:bluetooth-connect$$'}
   - {h: '3', s: '$$mdi:bluetooth-connect$$'}
@@ -142,7 +142,7 @@ layers:
   - {t: '8', s: '*'}
   - {t: '9', s: (}
   - +
-  - {t: QWERY, h: toggle}
+  - {t: QWERTY, h: toggle}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:bluetooth-off$$
   - BT CLR ALL
@@ -191,22 +191,25 @@ layers:
   - $$mdi:mouse-left-click-outline$$
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {t: QWERY, h: toggle}
+  - {t: QWERTY, h: toggle}
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '=', s: +}
 combos:
 - p: [11, 12]
   k: $$mdi:backspace-reverse-outline$$
-  l: [QWERY]
+  l: [QWERTY]
 - p: [48, 49]
   k: '&draw_arrow'
-  l: [QWERY]
+  l: [QWERTY]
 - p: [50, 51]
   k: '&run_cell'
-  l: [QWERY]
+  l: [QWERTY]
+- p: [37, 38]
+  k: '&run_same_cell'
+  l: [QWERTY]
 - p: [3, 4]
   k: '&code_comment'
-  l: [QWERY]
+  l: [QWERTY]
 - p: [0, 1]
   k: '&code_console'
-  l: [QWERY]
+  l: [QWERTY]
