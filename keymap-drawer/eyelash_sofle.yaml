@@ -71,7 +71,7 @@ layers:
   - F3
   - F4
   - F5
-  - '&msc SCRL_UPttttttttttttttttttttt'
+  - $$mdi:pan-up$$
   - F6
   - F7
   - F8
