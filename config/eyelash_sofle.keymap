@@ -257,7 +257,7 @@
             key-positions = <62 63>;
             bindings = <&kp EQUAL>;
             layers = <0>;
-        }
+        };
 
     };
 
