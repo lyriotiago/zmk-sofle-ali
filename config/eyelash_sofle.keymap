@@ -1,7 +1,7 @@
 #define CONFIG_ZMK_POINTING=y
 #define CONFIG_ZMK_POINTING_SMOOTH_SCROLLING=n
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200  // 60
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 120  // 10
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 6200  // 10
 
 #include <behaviors/mouse_keys.dtsi>
 #include <behaviors.dtsi>
@@ -18,7 +18,7 @@
 #define CONFIG_ZMK_POINTING=y
 #define CONFIG_ZMK_POINTING_SMOOTH_SCROLLING=n
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200  // 60
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 120  // 10
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 6200  // 10
 
 &msc {
     x-input-code = <INPUT_REL_HWHEEL>;
@@ -127,6 +127,15 @@ msc {
                 , <&macro_release &kp LSHFT>
                 ;
         };
+        run_same_cell: run_same_cell {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp ENTER>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
         scroll_up: scroll_up {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -208,6 +217,12 @@ msc {
             bindings = <&run_cell>;
             layers = <0>;
         };
+        combo_run_same_cell {
+            timeout-ms = <50>;
+            key-positions = <37 38>;
+            bindings = <&run_same_cell>;
+            layers = <0>;
+        };
         combo_code_comment {
             timeout-ms = <50>;
             key-positions = <3 4>;
@@ -251,7 +266,7 @@ msc {
             >;
 
             sensor-bindings = <&scroll_encoder>;
-            display-name = "QWERY";
+            display-name = "QWERTY";
         };
 
         layer_1 {
