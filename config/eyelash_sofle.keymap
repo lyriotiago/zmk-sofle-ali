@@ -16,14 +16,14 @@
 #include <input/processors.dtsi>
 
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200  // 60
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 1200  // 10
-#define CONFIG_ZMK_POINTING=y    // 10
-#define CONFIG_ZMK_POINTING_SMOOTH_SCROLLING=y
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 4200  // 10
+#define CONFIG_ZMK_POINTING y    // 10
+#define CONFIG_ZMK_POINTING_SMOOTH_SCROLLING y
 
 &msc {
     x-input-code = <INPUT_REL_HWHEEL>;
     y-input-code = <INPUT_REL_WHEEL>;
-    time-to-max-speed-ms = <0>;
+    time-to-max-speed-ms = <100>;
     acceleration-exponent = <0>;
 };
 
@@ -228,14 +228,14 @@ msc {
             compatible = "zmk,behavior-sensor-rotate";
             label = "RGB_ENCODER";
             #sensor-binding-cells = <0>;
-            bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
+            bindings = <&rgb_ug RGB_HUD>, <&rgb_ug RGB_HUI>;
         };
 
         scroll_encoder: scroll_encoder {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-            tap-ms = <100>;
+            tap-ms = <300>;
         };
     };
     keymap {
@@ -276,7 +276,7 @@ msc {
             &kp C_MUTE     &rgb_ug RGB_OFF  &rgb_ug RGB_ON   &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_TOG  &mkp LCLK        &kp SPACE   &kp ENTER        &to 0      &kp ENTER  &kp EQUAL
             >;
  
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&rgb_encoder>;
             display-name = "Config";
         };
     };
