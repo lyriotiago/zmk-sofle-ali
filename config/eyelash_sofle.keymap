@@ -23,48 +23,6 @@
     delay-ms = <0>;
 };
 
-/*
-#include <behaviors/mouse_keys.dtsi>
-#include <dt-bindings/zmk/mouse.h>
-
-
-#define CONFIG_ZMK_POINTING_SMOOTH_SCROLLING y
-#define ZMK_MOUSE_SCRL_VAL 20000  // 10
-#define CONFIG_ZMK_POINTING y
-CONFIG_ZMK_POINTING=y
-
-&mmv_input_listener {
-    input-processors = <&zip_xy_scaler 2 1>;
-};
-
-&msc_input_listener {
-    input-processors = <&zip_xy_scaler 2 1>;
-};
-
-mmv {
-    acceleration-exponent = <1>;     // 1
-    time-to-max-speed-ms = <900>;    // 40
-    delay-ms = <0>;                  // 0
-};
-
-msc {
-    delay-ms = <0>;                  // 0
-    acceleration-exponent = <1>;     // 0
-    time-to-max-speed-ms = <1>;      // 300
-};
-
-&msc {
-    acceleration-exponent = <0>;      // 0
-    time-to-max-speed-ms = <0>;       // 300
-    delay-ms = <0>;                   // 0
-};
-
-&mmv {
-    time-to-max-speed-ms = <400>;
-    acceleration-exponent = <1>;
-};
-
-*/
 
 / {
     macros {
@@ -204,28 +162,12 @@ msc {
 
     combos {
         compatible = "zmk,combos";
-        combo_del {
+
+
+        combo_code_console {
             timeout-ms = <50>;
-            key-positions = <11 12>;
-            bindings = <&kp DELETE>;
-            layers = <0>;
-        };
-        combo_arrow {
-            timeout-ms = <50>;
-            key-positions = <48 49>;
-            bindings = <&draw_arrow>;
-            layers = <0>;
-        };
-        combo_run_cell {
-            timeout-ms = <50>;
-            key-positions = <50 51>;
-            bindings = <&run_cell>;
-            layers = <0>;
-        };
-        combo_run_same_cell {
-            timeout-ms = <50>;
-            key-positions = <37 38>;
-            bindings = <&run_same_cell>;
+            key-positions = <0 1>;
+            bindings = <&code_console>;
             layers = <0>;
         };
         combo_code_comment {
@@ -234,10 +176,78 @@ msc {
             bindings = <&code_comment>;
             layers = <0>;
         };
-        combo_code_console {
+
+
+        combo_plus {
             timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&code_console>;
+            key-positions = <9 10>;
+            bindings = <&kp PLUS>;
+            layers = <0>;
+        };
+        combo_minus {
+            timeout-ms = <50>;
+            key-positions = <22 23>;
+            bindings = <&kp MINUS>;
+            layers = <0>;
+        };
+        combo_under {
+            timeout-ms = <50>;
+            key-positions = <35 36>;
+            bindings = <&kp UNDER>;
+            layers = <0>;
+        };
+        combo_arrow {
+            timeout-ms = <50>;
+            key-positions = <48 49>;
+            bindings = <&draw_arrow>;
+            layers = <0>;
+        };
+
+
+        combo_LPAR {
+            timeout-ms = <50>;
+            key-positions = <10 11>;
+            bindings = <&kp LPAR>;
+            layers = <0>;
+        };
+        combo_LEFT_BRACKET {
+            timeout-ms = <50>;
+            key-positions = <23 24>;
+            bindings = <&kp LEFT_BRACKET>;
+            layers = <0>;
+        };
+        combo_LBRC {
+            timeout-ms = <50>;
+            key-positions = <36 37>;
+            bindings = <&kp LBRC>;
+            layers = <0>;
+        };
+
+
+        combo_del {
+            timeout-ms = <50>;
+            key-positions = <11 12>;
+            bindings = <&kp DELETE>;
+            layers = <0>;
+        };
+        combo_COLON {
+            timeout-ms = <50>;
+            key-positions = <37 38>;
+            bindings = <&kp COLON>;
+            layers = <0>;
+        };
+        combo_run_cell {
+            timeout-ms = <50>;
+            key-positions = <50 51>;
+            bindings = <&run_cell>;
+            layers = <0>;
+        };
+
+
+        combo_to2 {
+            timeout-ms = <50>;
+            key-positions = <60 61>;
+            bindings = <&to 2>;
             layers = <0>;
         };
     };
@@ -258,7 +268,7 @@ msc {
         scroll_encoder: scroll_encoder {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&msc MOVE_Y(-40)>, <&msc MOVE_Y(40)>;
+            bindings = <&msc MOVE_Y(-50)>, <&msc MOVE_Y(50)>;
 
             tap-ms = <50>;
         };
@@ -280,7 +290,7 @@ msc {
 &kp TAB     &kp Q            &kp W         &kp E         &kp R         &kp T                          &kp DOWN_ARROW                 &kp Y       &kp U      &kp I            &kp O            &kp P       &kp BSLH
 &mo 1       &kp A            &kp S         &kp D         &kp F         &kp G                          &kp LEFT_ARROW                 &kp H       &kp J      &kp K            &kp L            &kp SEMI    &kp APOS
 &kp LSHFT   &kp Z            &kp X         &kp C         &kp V         &kp B                          &kp RIGHT_ARROW                &kp N       &kp M      &kp COMMA        &kp DOT          &kp FSLH    &kp ENTER
-            &mute_unmute     &kp LCTRL     &kp LEFT_GUI  &kp LEFT_ALT  &mo 1        &kp SPACE         &kp ENTER          &kp SPACE   &kp ENTER   &to 2      &prev_word       &next_word
+            &mute_unmute     &kp LCTRL     &kp LEFT_GUI  &kp LEFT_ALT  &mo 1        &kp SPACE         &kp ENTER          &kp SPACE   &kp ENTER   &mo 1      &prev_word       &next_word
             >;
 
             sensor-bindings = <&scroll_encoder>;
