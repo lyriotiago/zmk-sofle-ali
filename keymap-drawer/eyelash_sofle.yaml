@@ -58,7 +58,7 @@ layers:
   - $$mdi:apple-keyboard-control$$
   - Symbol
   - $$mdi:keyboard-space$$
-  - '&select_word'
+  - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:keyboard-space$$
   - Symbol
   - $$mdi:apple-keyboard-shift$$
@@ -94,7 +94,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - '~'
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '&select_word'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - '&prev_word'
@@ -124,7 +124,7 @@ layers:
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - Ins
-  - {t: '=', s: +}
+  - '&select_word'
   - {type: held alternate}
   - '*'
   - {t: /, s: '?'}
