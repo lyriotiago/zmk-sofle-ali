@@ -147,8 +147,8 @@ layers:
   - $$mdi:bluetooth-off$$
   - BT CLR ALL
   - '&mkp MB4'
-  - '&mkp RGB_BRI'
-  - '&RGB_BRD'
+  - RGB BRI
+  - GB BRD
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
   - $$mdi:pan-up$$
   - {t: '4', s: $}
