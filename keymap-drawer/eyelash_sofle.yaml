@@ -148,7 +148,7 @@ layers:
   - BT CLR ALL
   - '&mkp MB4'
   - RGB BRI
-  - GB BRD
+  - RGB BRD
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
   - $$mdi:pan-up$$
   - {t: '4', s: $}
