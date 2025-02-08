@@ -225,7 +225,7 @@
             layers = <0>;
         };
         combo_LEFT_BRACKET {
-            timeout-ms = <50>;
+            timeout-ms = <30>;
             key-positions = <23 24>;
             bindings = <&kp LEFT_BRACKET>;
             layers = <0>;
@@ -244,6 +244,14 @@
             bindings = <&kp DELETE>;
             layers = <0>;
         };
+
+        combo_APOS {
+            timeout-ms = <50>;
+            key-positions = <24 25>;
+            bindings = <&kp APOS>;
+            layers = <0>;
+        };
+
         combo_COLON {
             timeout-ms = <50>;
             key-positions = <37 38>;
@@ -322,10 +330,10 @@
 
         layer_1 {
             bindings = <
-&code_console  &kp F1       &kp F2           &kp F3        &kp F4    &kp F5              &msc SCRL_UP                    &kp F6       &kp F7         &kp F8      &kp LPAR           &kp RPAR           &kp PLUS
-&kp K_SLEEP    &kp GRAVE    &kp F9           &kp F10       &kp F11   &kp F12             &msc SCRL_DOWN                  &kp PG_UP    &kp UP         &kp HOME    &kp LEFT_BRACKET   &kp RIGHT_BRACKET  &kp MINUS
-&trans         &kp TILDE    &trans           &select_word  &trans    &trans              &prev_word                      &kp LEFT     &kp DOWN       &kp RIGHT   &kp LBRC           &kp RBRC           &kp UNDER
-&redo          &undo        &cut             &copy         &paste    &trans              &next_word                      &kp PG_DN    &kp INSERT     &kp END     &kp LESS_THAN      &kp GREATER_THAN   &kp EQUAL
+&code_console  &kp F1       &kp F2           &kp F3        &kp F4    &kp F5              &kp PG_UP                       &kp F6       &kp F7         &kp F8      &kp LPAR           &kp RPAR           &kp PLUS
+&kp K_SLEEP    &kp GRAVE    &kp F9           &kp F10       &kp F11   &kp F12             &kp PG_DN                       &kp PG_UP    &kp UP         &kp HOME    &kp LEFT_BRACKET   &kp RIGHT_BRACKET  &kp MINUS
+&trans         &kp TILDE    &trans           &select_word  &trans    &trans              &kp HOME                        &kp LEFT     &kp DOWN       &kp RIGHT   &kp LBRC           &kp RBRC           &kp UNDER
+&redo          &undo        &cut             &copy         &paste    &trans              &kp END                         &kp PG_DN    &kp INSERT     &kp END     &kp LESS_THAN      &kp GREATER_THAN   &kp EQUAL
                &kp C_MUTE   &kp PRINTSCREEN  &kp CAPSLOCK  &trans    &trans   &trans     &kp INSERT        &select_word  &trans       &kp ASTERISK   &kp FSLH    &draw_arrow
             >;
 
@@ -335,11 +343,11 @@
 
         layer_2 {
             bindings = <
-&to 0       &bt BT_SEL 0   &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                      &rgb_ug RGB_BRI              &kp F6           &kp N7     &kp N8     &kp N9    &kp PLUS      &to 0
-&trans      &bt BT_CLR     &bt BT_CLR_ALL   &mkp MB4         &mkp MB5         &trans                            &rgb_ug RGB_BRD              &msc SCRL_UP     &kp N4     &kp N5     &kp N6    &kp MINUS     &sys_reset
-&trans      &out OUT_USB   &out OUT_BLE     &trans           &rgb_ug RGB_SPI  &rgb_ug RGB_SPD                   &rgb_ug RGB_HUI              &msc SCRL_DOWN   &kp N1     &kp N2     &kp N3    &kp ASTERISK  &soft_off
-&trans      &sys_reset     &trans           &bootloader      &rgb_ug RGB_SAI  &rgb_ug RGB_SAD                   &rgb_ug RGB_HUD              &trans           &kp COMMA  &kp N0     &kp DOT   &kp FSLH      &bootloader
-            &kp C_MUTE     &rgb_ug RGB_OFF  &rgb_ug RGB_ON   &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_TOG  &mkp LCLK        &kp SPACE   &kp ENTER        &to 0      &kp ENTER  &kp EQUAL
+&to 0       &bt BT_SEL 0   &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                      &mmv MOVE_UP                 &kp F6           &kp N7     &kp N8     &kp N9    &kp PLUS      &to 0
+&trans      &bt BT_CLR     &bt BT_CLR_ALL   &mkp MB4         &mkp RGB_BRI     &RGB_BRD                          &mmv MOVE_DOWN               &msc SCRL_UP     &kp N4     &kp N5     &kp N6    &kp MINUS     &sys_reset
+&trans      &out OUT_USB   &out OUT_BLE     &trans           &rgb_ug RGB_SPI  &rgb_ug RGB_SPD                   &mmv MOVE_LEFT               &msc SCRL_DOWN   &kp N1     &kp N2     &kp N3    &kp ASTERISK  &soft_off
+&trans      &sys_reset     &trans           &bootloader      &rgb_ug RGB_SAI  &rgb_ug RGB_SAD                   &mmv MOVE_RIGHT              &trans           &kp COMMA  &kp N0     &kp DOT   &kp FSLH      &bootloader
+            &kp C_MUTE     &rgb_ug RGB_OFF  &rgb_ug RGB_ON   &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_TOG  &mkp LCLK        &mkp LCLK   &mkp RCLK        &to 0      &kp ENTER  &kp EQUAL
             >;
  
             sensor-bindings = <&rgb_encoder>;
